@@ -4,73 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Stickerei & Design | Prémium Gépi Hímzés</title>
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
 <body>
 
     <nav class="navbar">
-        <div class="container nav-flex">
-            <a href="#" class="brand-box">
-                <span class="m-initial">M</span>
-                <div class="brand-text">
-                    <span class="brand-title">MARTIN</span>
-                    <span class="brand-subtitle">STICKEREI & DESIGN</span>
-                </div>
-            </a>
-
+        <div class="container">
+            <a href="#" class="logo">MARTIN <span>STICKEREI</span></a>
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="#about">Rólunk</a></li>
                     <li><a href="#services">Szolgáltatások</a></li>
-                    <li><a href="#contact" class="cta-nav">Ajánlatkérés</a></li>
+                    <li><a href="#pricing">Árak</a></li>
+                    <li><a href="#contact">Kapcsolat</a></li>
                 </ul>
-                <div class="lang-header">
-                    <img src="https://flagcdn.com/w40/hu.png" alt="HU">
-                    <img src="https://flagcdn.com/w40/de.png" alt="DE">
-                </div>
-                <div class="menu-toggle">
-                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                <a href="#contact" class="btn btn-nav">Ajánlatkérés</a>
+                <div class="burger">
+                    <div></div><div></div><div></div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1528459105426-b9548367069b?q=80&w=2000&auto=format&fit=crop');">
-        <div class="container hero-content">
-            <h1>Minden öltés egy üzenet.</h1>
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1528459105426-b9548367069b?q=80&w=2000&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1>Minden öltés egy <span>üzenet</span>.</h1>
             <p>Ipari precizitás, prémium alapanyagok és elegáns megjelenés – hímezzük bele cége sikerét minden textíliába.</p>
-            <a href="#contact" class="cta-nav" style="padding: 18px 40px; font-size: 16px;">Kérjen professzionális ajánlatot</a>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Ingyenes ajánlat</a>
+                <a href="#services" class="btn btn-alt">Szolgáltatásaink</a>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="story-section">
-        <div class="container story-flex">
-            <div class="story-content">
-                <span class="sub-label">A MI TÖRTÉNETÜNK</span>
-                <h2>Szenvedély és Precizitás</h2>
-                <p>A <strong>Martin Stickerei & Design</strong> alapítása óta a minőségi textil-logózás elkötelezett híve.</p>
-                <p>Műhelyünkben a legmodernebb német hímzéstechnológiát ötvözzük a személyes odafigyeléssel.</p>
-            </div>
-            <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop" alt="Prémium hímzés munka" class="side-img">
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop" alt="Hímzés folyamat">
+                </div>
+                <div class="about-text">
+                    <p class="about-lead">Szenvedély és Precizitás</p>
+                    <h2>A Mi Történetünk</h2>
+                    <p>A Martin Stickerei & Design alapítása óta a minőségi textil-logózás elkötelezett híve. Műhelyünkben a legmodernebb technológiát ötvözzük a személyes odafigyeléssel.</p>
+                    <div class="trust-features">
+                        <div class="trust-box"><i class="fas fa-check-circle"></i> Német hímzéstechnológia</div>
+                        <div class="trust-box"><i class="fas fa-check-circle"></i> Személyes odafigyelés</div>
+                        <div class="trust-box"><i class="fas fa-check-circle"></i> Gyors határidők</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services-section">
+    <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Szolgáltatásaink</h2>
-            <div class="service-grid">
-                <div class="s-card">
-                    <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=500&auto=format&fit=crop" alt="B2B hímzés">
-                    <div class="s-info"><h3>B2B Sorozatgyártás</h3><p>Tömeges hímzés és címkézés cégeknek rövid határidővel.</p></div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>B2B Sorozatgyártás</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Tömeges hímzés cégeknek</li>
+                        <li><i class="fas fa-check"></i> Rövid határidők</li>
+                    </ul>
                 </div>
-                <div class="s-card">
-                    <img src="https://images.unsplash.com/photo-1621335829175-95f437384d7c?q=80&w=500&auto=format&fit=crop" alt="Textil branding">
-                    <div class="s-info"><h3>Textil Arculatépítés</h3><p>Teljes körű textilellátás és hímzés hotelek, éttermek részére.</p></div>
+                <div class="service-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Textil Arculatépítés</h3>
+                    <p>Teljes körű textilellátás hotelek és éttermek részére.</p>
+                    <img src="https://images.unsplash.com/photo-1621335829175-95f437384d7c?q=80&w=400&auto=format&fit=crop" alt="Textil branding" style="width:100%; border-radius:8px; margin-top:15px;">
                 </div>
-                <div class="s-card">
-                    <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?q=80&w=500&auto=format&fit=crop" alt="Egyedi minták">
-                    <div class="s-info"><h3>Egyedi Tervezés</h3><p>Speciális minták, hozott anyag hímzése és kis szériás munkák.</p></div>
+                <div class="service-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Egyedi Tervezés</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Speciális minták</li>
+                        <li><i class="fas fa-check"></i> Hozott anyag hímzése</li>
+                    </ul>
                 </div>
             </div>
         </div>
