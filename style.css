@@ -1,0 +1,332 @@
+:root {
+    --primary: #27ae60;
+    --primary-hover: #219150;
+    --dark: #1a1a1a;
+    --light: #ffffff;
+    --bg-gray: #f8f9fa;
+    --text: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; color: var(--text); line-height: 1.6; background-color: var(--light); overflow-x: hidden; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar */
+.navbar { background: white; height: 85px; display: flex; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.nav-right { display: flex; align-items: center; }
+
+.logo { font-size: 1.6rem; font-weight: 800; color: var(--dark); text-decoration: none; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; margin-right: 25px; }
+.nav-links li a { text-decoration: none; color: var(--dark); margin-left: 25px; font-weight: 600; transition: 0.3s; }
+.nav-links li a:hover { color: var(--primary); }
+
+/* Hero */
+.hero { 
+    height: 100vh; position: relative;
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; color: white; text-align: center;
+}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1; }
+.hero .container { position: relative; z-index: 2; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 20px; }
+.hero h1 span { color: var(--primary); }
+.hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9; }
+
+/* Gombok */
+.btn { padding: 15px 30px; border-radius: 6px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; background: var(--primary); color: white; }
+.btn-alt { background: white; color: var(--dark); margin-left: 10px; }
+.btn-nav { padding: 10px 20px; font-size: 0.85rem; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); }
+
+/* Services */
+.services { padding: 80px 0; background: var(--bg-gray); }
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.service-card { background: white; padding: 30px; border-radius: 12px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+/* Csak a kártya tetején lévő nagy ikon */
+.service-card > i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
+
+.service-card ul { list-style: none; margin-top: 15px; padding: 0; }
+
+/* A felsorolás elemei - Itt történik a javítás */
+.service-card li { 
+    font-size: 0.9rem; 
+    margin-bottom: 12px; 
+    display: flex; 
+    align-items: flex-start; /* Az ikon a szöveg első sorához igazodik */
+    gap: 10px;
+    line-height: 1.4;
+}
+
+/* Kifejezetten a kis pipák (ikonok a listában) */
+.service-card li i { 
+    font-size: 0.9rem; 
+    color: var(--primary); 
+    margin: 0; /* Töröljük a globális margint! */
+    padding-top: 3px; /* Finomhangolás, hogy pontosan a betű közepén legyen */
+    min-width: 18px;
+    display: inline-block;
+}
+
+/* About - Javított kép és sorrend */
+.about { padding: 80px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about-img img { width: 100%; border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.about-lead { font-size: 1.2rem; font-weight: 600; color: var(--primary); margin-bottom: 15px; }
+.trust-features { margin-top: 25px; }
+.trust-box { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.trust-box i { color: var(--primary); }
+
+/* Pricing */
+.pricing { padding: 80px 0; background: var(--bg-gray); }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.price-card { background: white; padding: 40px; border-radius: 15px; text-align: center; position: relative; border: 1px solid #ddd; }
+.price-card.featured { border: 2px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: scale(1.05); }
+.badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 15px; border-radius: 20px; font-size: 0.8rem; }
+.price-tag { font-size: 2.2rem; font-weight: 800; margin: 20px 0; }
+.price-list { list-style: none; margin-bottom: 25px; }
+.price-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+
+/* Contact */
+.contact { padding: 80px 0; background: var(--dark); color: white; text-align: center; }
+.contact-box { max-width: 600px; margin: 0 auto; }
+.contact-form { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea { padding: 15px; border-radius: 5px; border: none; width: 100%; resize: none;}
+
+/* Side Menu Mobilon */
+.burger { display: none; cursor: pointer; z-index: 1100; }
+.burger div { width: 25px; height: 3px; background: var(--dark); margin: 5px; transition: 0.3s; }
+
+@media (max-width: 992px) {
+    .nav-links { 
+        position: fixed; top: 0; right: -100%; height: 100vh; width: 80%; 
+        background: white; flex-direction: column; align-items: center; justify-content: center;
+        transition: 0.5s; z-index: 1050; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { right: 0; }
+    .nav-links li { margin: 20px 0; }
+    .nav-links li a { font-size: 1.5rem; margin-left: 0; }
+    .burger { display: block; }
+    .btn-nav { display: none; }
+    
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img { order: -1; max-width: 500px; margin: 0 auto; } /* Kép felülre */
+}
+
+@media (max-width: 600px) {
+    .hero-btns { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+    .btn { width: 90%; margin-left: 0 !important; } /* Gombok középen, egyforma szélesen */
+    .price-card.featured { transform: scale(1); }
+}
+
+footer { background: #000; color: #777; text-align: center; padding: 30px 0; }
+/* Névjegykártyák */
+.testimonials {
+    padding: 100px 0;
+    background: var(--bg-gray);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testi-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.testi-card:hover {
+    transform: translateY(-10px);
+}
+
+.testi-header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 15px;
+}
+
+.testi-info h3 {
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.testi-info a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.testi-body p {
+    font-style: italic;
+    color: #555;
+    line-height: 1.8; /* Kényelmes olvashatóság a hosszú szöveghez */
+    margin-bottom: 20px;
+}
+
+.testi-footer {
+    margin-top: auto;
+}
+
+.tag {
+    background: #eefaf2;
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Mobilos nézet */
+@media (max-width: 480px) {
+    .testi-card { padding: 25px; }
+}
+/* Kapcsolat szekció - Széles elrendezés */
+.contact {
+    padding: 40px 0; /* Minimálisra vett magasság */
+    background: #0f0f0f;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Itt a lényeg: a gap tolja szét a két oldalt, a max-width pedig engedi szélesre */
+    gap: 150px; 
+    align-items: start;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Bal oldal - Form */
+.contact-form-wrapper {
+    text-align: left;
+}
+
+.contact-form-wrapper h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Jobb oldal - Minden kényszerítve balra */
+.contact-info {
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ez tolja az egészet a saját térfelének a bal szélére */
+}
+
+.info-content {
+    width: 100%;
+    text-align: left;
+}
+
+.info-content h3 {
+    font-size: 1.8rem;
+    color: #2ecc71;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
+.quote {
+    font-style: italic;
+    color: #aaa;
+    border-left: 3px solid #2ecc71;
+    padding-left: 15px;
+    margin: 10px 0 25px 0;
+    text-align: left;
+    max-width: 400px; /* Hogy ne nyúljon túl hosszan a szöveg */
+}
+
+/* Elérhetőségek - precíz egymás alá rendezés */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center; /* Ikon és szöveg egy vonalban */
+    gap: 15px;
+    text-align: left;
+}
+
+.detail-item i {
+    font-size: 1.1rem;
+    color: #2ecc71;
+    background: rgba(46, 204, 113, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.detail-item div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Szövegek egymás alatt balra */
+}
+
+.detail-item span {
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.detail-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.info-footer {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #222;
+    color: #444;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: left;
+}
+
+/* Mobil nézet */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .contact-info, .detail-item, .detail-item div {
+        align-items: center;
+        text-align: center;
+    }
+    .quote {
+        border-left: none;
+        padding-left: 0;
+        margin: 10px auto;
+    }
+
+}
